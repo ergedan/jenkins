@@ -3,7 +3,9 @@ pipeline {
 	agent none
 	stages {
 		stage('inital') {
-			echo "只是测试项目"
+			steps {
+				echo "只是测试项目"
+			}
 		}
 		stage('build') {
 			agent{
