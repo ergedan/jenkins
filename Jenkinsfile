@@ -9,7 +9,7 @@ pipeline {
 		}
 		stage('build') {
 			agent{
-				docker { image "python:latest" }
+				docker { image "python:3.4-alpine3.8" }
 			}
 			steps {
 				sh 'python --version'
