@@ -1,15 +1,17 @@
+#!/usr/bin/env groovy
 pipeline {
-    agent none 
-    stages {
-        stage('Build') { 
-            agent {
-                docker {
-                    image 'python:2-alpine' 
-                }
-            }
-            steps {
-                sh 'python -m py_compile sources/add2vals.py sources/calc.py' 
-            }
-        }
-    }
+	agent none
+	stages {
+		stage('inital') {
+			echo "只是测试项目"
+		}
+		stage('build') {
+			agent{
+				docker { image "python:latest" }
+			}
+			steps {
+				sh 'python --version'
+			}
+		}
+	}
 }
